@@ -1,6 +1,8 @@
-# Project template for rp2040-hal
+# rp-PRBS
 
-This template is intended as a starting point for developing your own firmware based on the rp2040-hal.
+This project output a Pseudrandom bits sequence(PRBS) on a GPIO using a pio state machine.
+
+By defaut, the output is set on the pin 21 and the transmitter enable pin is 20.
 
 It includes all of the `knurling-rs` tooling as showcased in https://github.com/knurling-rs/app-template (`defmt`, `defmt-rtt`, `panic-probe`, `flip-link`) to make development as easy as possible.
 
