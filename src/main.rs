@@ -21,7 +21,7 @@ use crate::hal::pio::Buffers;
 use bsp::hal;
 use bsp::hal::{
     clocks::{init_clocks_and_plls, Clock},
-    gpio::{FunctionPio0, Pin},
+    gpio::FunctionPio0,
     sio::Sio,
     watchdog::Watchdog,
 };
@@ -97,7 +97,7 @@ fn main() -> ! {
         tx.write(rng.next_u32());
     }
     //enable the output
-    tx_en.set_high(); // use set_low() if your enable is logic low.
+    tx_en.set_high().err(); // use set_low() if your enable is logic low.
     tx0.start();
     loop {
         while tx.is_full() {}
